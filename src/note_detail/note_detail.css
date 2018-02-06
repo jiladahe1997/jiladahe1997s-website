@@ -1,0 +1,28 @@
+*{
+	box-sizing: border-box;
+}
+body{
+	font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+
+.app{
+	width: 1080px;
+	margin:50px auto;
+}
+
+.header{
+	padding-left: 30px;
+	border-width: 1px;
+	border-color: #ddd;
+	border-style: solid;
+	background-color: #f6f8fa;
+	font-size: 20px;
+}
+
+.container{
+	padding: 30px 60px 100px 60px;
+	border-width: 1px;
+	border-color: #ddd;
+	border-style: solid;
+	font-size: 22px;
+}

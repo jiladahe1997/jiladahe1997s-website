@@ -1,0 +1,91 @@
+* {
+	box-sizing: border-box;
+}
+body{
+	font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+
+a{
+	
+	text-decoration: none;
+	font-size: 10px;
+	color: #000;
+}
+.app{
+	background-image: url(avatarbackground.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	height:500px;
+	width: 1080px;
+	margin:10px auto;
+}
+
+/*第一部分css*/
+.avatar{
+	display: block;
+	width: 100px;
+	margin: 50px auto;
+	border-radius: 60px;
+	overflow: hidden;
+	height: 100px;
+}
+
+.breif{
+	margin-left: 100px;
+	font-size: 30px;
+}
+
+.breifPragraph{
+	margin-left: 60px;
+	font-size: 15px;
+}
+
+
+
+/*第二部分css*/
+ul.nav{
+	display: block;
+	width: 1000px;
+	margin: 150px auto;
+	list-style: none;
+	padding: 0;
+}
+
+li{
+	display: inline-block;
+}
+.navButton-left{
+	width:250px;
+	height: 40px;
+	border-width: 1px 0px 1px 1px;
+	border-radius: 4px 0px 0px 4px;
+}
+.navButton-right{
+	width:250px;
+	height: 40px;
+	border-width: 2px 2px 2px 2px;
+	border-radius: 0px 4px 4px 0px;
+}
+.navButton{
+	width:250px;
+	height: 40px;
+	border-width: 2px 0px 2px 2px;
+	border-radius: 0px;
+}
+
+
+/*第三部分css*/
+.footer{
+	margin: 100px auto;
+}
+
+.projectAddress{
+	width: 310px;
+	display: block;
+	margin:0 auto;
+	text-align: center;
+	text-decoration: none;
+	font-size: 10px;
+	color: #000;
+
+}

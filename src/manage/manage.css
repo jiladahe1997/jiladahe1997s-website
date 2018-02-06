@@ -1,0 +1,105 @@
+* {
+	font:  "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    font-stretch: normal;
+    font-family: 'Helvetica Neue', Helvetica, Arial, 'Microsoft Yahei', 'Hiragino Sans GB', 'Heiti SC', 'WenQuanYi Micro Hei', sans-serif;
+}
+
+.app{
+	width: 1080px;
+	margin: 150px auto;
+}
+
+
+
+
+	/*左部选项卡*/
+.leftControl{
+	display: inline-block;
+	margin-top: 100px;
+}
+
+.leftControl li{
+	margin:20px 30px;
+	list-style: none;
+	cursor: pointer;
+}
+
+.leftControl li h3{
+	margin-left: -15px;
+	margin-top: 50px;
+}
+
+
+
+
+	/*右部主界面*/
+.rightContent{
+	display: inline-block;
+	position: relative;
+	top:100px;
+	left: 300px;
+	vertical-align: top;             /*inline元素从上部开始对齐，这样当高度增加时从下面增加*/
+}
+
+	/*管理页面	*/
+.note-manage{
+	display: block;
+}
+
+/*添加新笔记*/
+.addnewnote{
+	display: none;
+}
+.addnewnote h2{
+	margin-left: -50px;
+	margin-bottom: 50px;
+}
+
+.addnewnote form {
+	margin-left: 50px;
+
+}
+.addnewnote input{
+	display: block;
+	width: 200px;
+	height: 30px;
+	margin:20px 0;
+	background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.addnewnote .title{
+	width: 300px;
+}
+.addnewnote label{
+	display: block;
+	margin:50px 0 20px 0px;
+}
+
+.addnewnote button{
+	padding: 6px 12px;
+	font-size: 16px;
+	color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+	border: 1px solid ;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.addnewnote button:hover{
+    background-color: #ddd;
+}
+
+/*当前笔记列表*/
+.nownote{
+	display: none;
+}
+.nownote table th{
+	padding: 10px 25px;
+}

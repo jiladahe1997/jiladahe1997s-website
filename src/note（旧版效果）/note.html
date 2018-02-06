@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>学习笔记</title>
+		<link rel="stylesheet" href="public/buttons.css">
+	</head>
+	<body>
+		<div class="container">
+			<!--采用inline进行单行多列非对称布局-->
+			<div class="head">
+				<!-- 此处是行内居中对齐，行内居中对齐且采用line-height时，注意字体保证一样，上下margin也要保证一样-->
+				<!-- 后期logo修改为图片 -->
+				<p class="head-logo">碧哥 の 站</p>
+				<ul class="head-nav">
+					<li>
+						<a class="button button-border button-pill" href="/index">首页</a>
+					</li>
+					<li>
+						<a class="button button-primary button-pill " href="/note">学习笔记</a>
+					</li>
+					<li>
+						<a class="button button-border button-pill" href="">web开发推荐</a>
+					</li>
+					<li>
+						<a class="button button-border  button-pill" href="">Private</a>
+					</li>
+				</ul>
+			</div>
+			<div class="brief">
+				<h1 class="brief-title">学 习 笔 记</h1>
+				<hr />
+				<p class="brief-content">这里包含了平时我个人的学习笔记，大部分都是我个人的理解。<br><br>
+				这些内容的主要出发点是基于为什么（why？）我们要学习某个东西<br> 
+				因此会显得有点过于简单、基础。请悉知。<br><br>
+				如果想了解更深的内容请到“web开发推荐”板块<br><br>
+				所有内容仅供参考。</p>
+				<img class="brief-img" src="./title.jpg" alt=""> 
+			</div>
+			<!--采用text进行单行单列居中布局
+				主要运用text-align属性-->
+			<div class="subnav">
+				<ul class="subnav-nav">
+					<li>
+						<a class="button  button-pill  button-small button-longshadow-left" href=""> web开发 ·</a>
+					</li>
+					<li>
+						<a class="button  button-pill button-small button-longshadow-left" href="">· 嵌入式开发 ·</a>
+					</li>
+				</ul>
+			</div>
+			<!--一个note有5个小部分，采用inline进行多行居中布局。
+				并且覆盖继承的text-align属性，同时要求进行未知height的垂直居中-->
+			<div class="note" id="note-0">
+				<a href="" class="note-model model-1" >
+					<div class="note-modeldivForVerticalcenter">
+						<p class="note-model-title" >标题</p>
+						<p class="note-model-writetime" >时间</p>
+						<hr class="note-model-hr">
+						<p class="note-model-brief" >简介</p>
+					</div>
+				</a>
+				<a href=""  class="note-model model-2" >
+					<div class="note-modeldivForVerticalcenter">
+						<p class="note-model-title">标题2</p>
+						<p class="note-model-writetime">时间2</p>
+						<hr class="note-model-hr">
+						<p class="note-model-brief">简介2</p>
+					</div>
+				</a>
+				<a href="" class="note-model model-3" >
+					<div class="note-modeldivForVerticalcenter">
+						<p class="note-model-title">标题3</p>
+						<p class="note-model-writetime">时间3</p>
+						<hr class="note-model-hr">
+						<p class="note-model-brief">简介3</p>
+					</div>
+				</a>
+				<a href="" class="note-model model-4" >
+					<div class="note-modeldivForVerticalcenter">
+						<p class="note-model-title">标题4</p>
+						<p class="note-model-writetime">时间4</p>
+						<hr class="note-model-hr">
+						<p class="note-model-brief">简介4</p>
+					</div>
+				</a>
+				<a href="" class="note-model model-5" >
+					<div class="note-modeldivForVerticalcenter">
+						<p class="note-model-title">标题5</p>
+						<p class="note-model-writetime">时间5</p>
+						<hr class="note-model-hr">
+						<p class="note-model-brief">简介5</p>
+					</div>
+				</a>
+			</div>
+			<div class="foot"></div>
+		</div>
+		<script src="note.js"></script>
+	</body>
+</html>

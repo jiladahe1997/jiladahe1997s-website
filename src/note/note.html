@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>学习笔记</title>
+		<link rel="stylesheet" href="public/buttons.css">
+	</head>
+	<body>
+		<div class="container">
+			<!--采用inline进行单行多列非对称布局-->
+			<div class="head">
+				<!-- 此处是行内居中对齐，行内居中对齐且采用line-height时，注意字体保证一样，上下margin也要保证一样-->
+				<!-- 后期logo修改为图片 -->
+				<p class="head-logo">碧哥 の 站</p>
+				<ul class="head-nav">
+					<li>
+						<a class="button button-border button-pill" href="/index">首页</a>
+					</li>
+					<li>
+						<a class="button button-primary button-pill " href="/note">学习笔记</a>
+					</li>
+					<li>
+						<a class="button button-border button-pill" href="">web开发推荐</a>
+					</li>
+					<li>
+						<a class="button button-border  button-pill" href="">Private</a>
+					</li>
+				</ul>
+			</div>
+			<div class="brief">
+				<h1 class="brief-title">学 习 笔 记</h1>
+				<hr />
+				<p class="brief-content">这里包含了平时我个人的学习笔记，大部分都是我个人的理解。<br><br>
+				这些内容的主要出发点是基于为什么（why？）我们要学习某个东西<br> 
+				因此会显得有点过于简单、基础。请悉知。<br><br>
+				如果想了解更深的内容请到“web开发推荐”板块<br><br>
+				所有内容仅供参考。</p>
+				<img class="brief-img" src="./title.jpg" alt=""> 
+			</div>
+			<!--采用text进行单行单列居中布局
+				主要运用text-align属性-->
+			<div class="subnav">
+				<ul class="subnav-nav">
+					<li>
+						<a class="button  button-pill  button-small button-longshadow-left" href=""> web开发 ·</a>
+					</li>
+					<li>
+						<a class="button  button-pill button-small button-longshadow-left" href="">· 嵌入式开发 ·</a>
+					</li>
+				</ul>
+			</div>
+			<div class="hr">
+				<p>-------------------------------------------------------------------------------------------华丽的分割线-------------------------------------------------------------------------------------------</p>
+				<p>以下内容同步至Github：<a href="https://github.com/jiladahe1997/a-web-development-note-using-node.js">https://github.com/jiladahe1997/a-web-development-note-using-node.js</a>
+				<br><br><br><br>以下内容采用showdown.js进行markdown转义：<a href="https://www.npmjs.com/package/showdown">https://www.npmjs.com/package/showdown</a>
+				</p>
+				<p>-------------------------------------------------------------------------------------------华丽的分割线-------------------------------------------------------------------------------------------</p>
+			</div>
+			<div class="webdev">
+			</div>
+			<div class="foot"></div>
+		</div>
+		<script src="note.js"></script>
+	</body>
+</html>
