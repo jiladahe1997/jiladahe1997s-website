@@ -54,7 +54,7 @@ function AppNvaigation(props){
 				<a  href="/note" className="navButton button button-glow button-border button-rounded button-primary">学习笔记</a>
 			</li>
 			<li>
-				<a  href="" className="navButton button button-glow button-border button-rounded button-primary">web开发推荐</a>
+				<a  href="/resume" className="navButton button button-glow button-border button-rounded button-primary">个人简历(18年)</a>
 			</li>
 			<li>
 				<a  href="/login" className="navButton-right button button-glow button-border button-rounded button-primary">Private</a>

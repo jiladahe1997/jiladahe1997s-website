@@ -8,6 +8,7 @@ module.exports = {
 		note : './src/note/note.js',
 		note_detail : './src/note_detail/note_detail.js',
 		manage : './src/manage/manage.js',
+		resume : './src/resume/resume.js'
 	},
 	output:{
 		filename:'[name].js',
@@ -53,6 +54,12 @@ module.exports = {
 			},
 			{
 				test:/\.jpg$/,
+				use:{
+					loader:'file-loader'
+				}
+			},
+			{
+				test:/\.png$/,
 				use:{
 					loader:'file-loader'
 				}

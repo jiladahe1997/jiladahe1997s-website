@@ -1,0 +1,517 @@
+*{
+    box-sizing: border-box
+}
+.main{
+    width: 100%;
+    height: 3149px;
+    background-image: url(./bg.png);
+    background-position: center;
+    overflow: hidden;
+}
+.container{
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+}
+.rocket{
+    position: absolute;
+    top: 202px;  
+    left: 452px;
+    transition: top 1s;
+}
+
+.rocket_left_down_1{
+    transition: top .5s ,left .5s 1s ,transform 1.5s;
+}
+.rocket_left_down_2{
+    transition: top .5s 1s ,left .5s  ,transform 1.5s;
+}
+.rocket_right_down_1{
+    transition: top .5s ,left .5s 1s ,transform 1.5s;
+}
+.rocket_right_down_2{
+    transition: top .5s 1s ,left .5s  ,transform 1.5s;
+}
+
+ /*第一阶段 ：   top 432pxl left 812px
+   第二阶段 :    top: 582px;
+                left: 382px;
+                transform: rotate(75deg);
+
+                top: 712px;
+                left: 450px
+   第三阶段 ：   top: 922px;
+                left: 780px;
+                transform: rotate(-75deg);
+
+                top: 1042px;
+                left: 990px;
+ 
+ */
+
+
+ .name{
+    position: relative;
+    top: 546px;
+    right: 165px;
+    color: white;
+    font-size: 35px;
+    font-family: "Microsoft YaHei";
+    text-align: center;
+    opacity: 0;
+ }
+
+ .name-show{
+     animation: 3s name_show forwards;
+ }
+ @keyframes name_show{
+     0%{opacity: 0}
+     100%{opacity: 1}
+ }
+
+
+ .school{
+    position: relative;
+    left: 300px;
+    top: 730px;
+    color: white;
+    font-size: 19px;
+    font-family: "Microsoft YaHei";
+    opacity: 0;
+ }
+.school-show{
+    animation: 3s school_show forwards;
+}
+@keyframes school_show{
+    0%{opacity: 0}
+    100%{opacity: 1}
+}
+.school > .school-school{
+    font-size: 38px;
+}
+
+.school > .school-institute{
+    font-size: 31px;
+}
+
+.school > .school-department{
+    font-size: 23px;
+}
+
+.brief{
+    position: relative;
+    right: 510px;
+    top: 950px;
+    text-align: right;
+    color: white;
+    font-size: 25px;
+    font-family: cursive;
+    opacity: 0;
+}
+.brief-show{
+    animation: 3s brief_show forwards;
+}
+@keyframes brief_show{
+    0%{opacity: 0}
+    100%{opacity: 1}
+}
+
+
+
+
+
+/*这里是一个标准的多行布局实例，可以多看看*/
+.experience{
+    /*position: relative;
+    top: 1230px;*/
+    margin-top: 1440px;
+    color: white;
+    text-align: center;
+}
+
+.experience-hr{
+    display: inline-block;
+    width: 2px;
+    height: 447px;
+}
+.experience-title{
+    font:50px "Microsoft YaHei";
+    color: #009cf7;
+}
+
+.experience-left{
+    display: inline-block;       /*这里必须把span默认的inline重写成inline-block,不然无法设置width属性*/
+    width: 45%;
+    text-align: right;
+    vertical-align: top;
+}
+.experience-left > p{
+    margin: 50px 0;
+}
+
+.experience-right{
+    display: inline-block;      /*这里必须把span默认的inline重写成inline-block,不然无法设置width属性*/
+    width: 45%;
+    text-align: left;
+    vertical-align: bottom;
+}
+.experience-right > p{
+
+    margin: 50px 0;
+}
+
+
+
+
+
+
+    /*主要成果*/
+.mainAchievement-title{
+    margin-top: 150px;
+    text-align: center;
+    font:35px "Microsoft YaHei";
+    color: #009688;
+}
+
+.mainAchievement-personalWebsite{
+    text-align: center;
+}
+.mainAchievement-personalWebsite > img{
+    width: 60px;
+    margin-right: 50px;
+    margin-bottom: 25px;
+    vertical-align: middle;
+}
+
+.mainAchievement-personalWebsite > span{
+    color: white;
+    font: 20px "Microsoft YaHei";
+    vertical-align: middle;
+}
+
+.mainAchievement-personalWebsite > span > a{
+    color: white;
+    text-decoration: none;
+}
+
+.mainAchievement-personalGithub{
+    text-align: center;
+}
+.mainAchievement-personalGithub > img{
+    width: 60px;
+    margin-right: 50px;
+    border-radius: 50px;
+    vertical-align: middle;
+}
+
+.mainAchievement-personalGithub > span{
+    color: white;
+    font: 20px "Microsoft YaHei";
+    vertical-align: middle;
+}
+
+.mainAchievement-personalGithub > span > a{
+    color: white;
+    text-decoration: none;
+}
+
+
+
+
+/*联系方式*/
+.contact-title{
+    margin-top: 100px;
+    text-align: center;
+    font:30px "Microsoft YaHei";
+    color: #00c066;
+}
+
+.contact-phone{
+    margin-left: 200px;
+}
+
+.contact-phone > img{
+    width: 60px;
+    vertical-align: middle;
+    margin-bottom: 20px;
+    margin-right: 25px;
+}
+
+.contact-phone > span{
+    color: white;
+    font-size: 25px;
+    vertical-align: middle;
+}
+
+.contact-mail{
+    margin-left: 200px;
+}
+
+.contact-mail > img{
+    width: 60px;
+    vertical-align: middle;
+    margin-bottom: 20px;
+    margin-right: 25px;
+}
+
+.contact-mail > span{
+    color: white;
+    font-size: 25px;
+    vertical-align: middle;
+}
+
+.contact-qq{
+    margin-left: 200px;
+}
+
+.contact-qq > img{
+    width: 60px;
+    vertical-align: middle;
+    margin-bottom: 20px;
+    margin-right: 25px;
+}
+
+.contact-qq > span{
+    color: white;
+    font-size: 25px;
+    vertical-align: middle;
+}
+
+
+
+
+
+
+
+    /*装饰物*/
+.decorate-earth{
+    position: absolute;
+    width: 250px;
+    top: 20px;
+    left: 440px;
+    animation: 20s decorate_earth linear infinite;
+}
+@keyframes decorate_earth{
+    0%{transform: rotate(0deg)}
+    100%{transform: rotate(360deg)}
+}
+
+
+.decorate-moon{
+    position: absolute;
+    width: 140px;
+    top: 530px;
+    left: 710px;
+    opacity: 0;
+}
+.decorate-moon-show{
+    animation: 2s 2s decorate_moon_show forwards,3s decorate_moon alternate linear infinite;
+   
+}
+@keyframes decorate_moon_show{
+    0%{opacity: 0}
+    100%{opacity: 1}
+}
+@keyframes decorate_moon{
+    0%{transform: rotate(-15deg)}
+    100%{transform:rotate(15deg)}
+}
+
+
+.decorate-school1{
+    position: absolute;
+    width: 150px;
+    top: 820px;
+    right: 10px;
+    opacity: 0;
+}
+.decorate-school1-show{
+    animation: 3s 4s decorate_school1_show forwards;
+}
+@keyframes decorate_school1_show{
+    0%{opacity: 0}
+    100%{opacity: 1}
+}
+.decorate-school2{
+    position: absolute;
+    width: 220px;
+    top: 920px;
+    left: 480px;
+    opacity: 0;
+}
+.decorate-school2-show{
+    animation: 3s 2s decorate_school2_show forwards;
+}
+@keyframes decorate_school2_show{
+    0%{opacity: 0}
+    100%{opacity: 1}
+}
+
+
+.decorate-brief1{
+    position: absolute;
+    top: 1090px;
+    left: 170;
+    opacity: 0;
+    transform-origin: center center;
+}
+.decorate-brief1-show{
+    animation: 3s 3s decorate_brief1_show  forwards , 3s 3s decorate_brief1_rotate infinite;;
+}
+@keyframes decorate_brief1_show{
+    0%{opacity: 0}
+    100%{opacity: 1}
+}
+@keyframes decorate_brief1_rotate{
+    0%{transform: rotate(0deg)}
+    100%{transform: rotate(360deg)}
+}
+
+
+.decorate-brief2{
+    position: absolute;
+    top: 1090px;
+    left: 170;
+    opacity: 0;
+}
+.decorate-brief2-show{
+    animation: 3s 2s decorate_brief2_show forwards;
+}
+@keyframes decorate_brief2_show{
+    0%{opacity: 0}
+    100%{opacity: 1}
+}
+
+
+
+
+
+
+/*总标题部分CSS*/
+.summary{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    color: white;
+}
+
+
+.summary > .summary-left{
+    display: inline-block;
+    width: 50%;
+    padding-left: 75px;
+    color: #03a260;
+}
+
+.summary > .summary-left > .main-title{
+    margin-top: 200px;
+    color: #03a260;
+    font: 50px "Microsoft YaHei";
+}
+.summary > .summary-left > .main-by{
+    margin-left: 200px;
+}
+.summary > .summary-left > .main-date{
+    margin-left: 200px;
+}
+
+
+.summary > .summary-right {
+    position: relative;
+    top: 130px;
+    display: inline-block;
+    width: 45%;
+    padding-left: 230px;
+    opacity: 0;
+}
+.summary-right-show{
+    animation: 3s start_show infinite;
+}
+
+.summary > .summary-right > .start-img{
+    width: 100px;
+    display: block;
+    margin-left: 43px;
+}
+
+.summary > .summary-right > .start-triangle{
+    width: 30px;
+    margin-left: 79px;
+    margin-top: 50px;
+}
+
+.summary > .summary-right > p{
+    font: 25px "Microsoft YaHei";
+}
+@keyframes start_show{
+    0%{opacity: 0}
+    50%{opacity: 1}
+    100%{opacity: 0}
+}
+
+
+
+
+
+
+
+
+
+
+    /*loading页面CSS*/
+.loading-bg{
+    width: 100%;
+}
+
+.loading-main{
+    position: relative;
+    width: 960px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.progress-outer{
+    width: 70%;
+    margin: 460 auto 0 auto;
+    background-color: rgba(128, 128, 128, 0.31);;
+}
+
+.progress-inner{
+    width: 30%;
+    height: 50px;
+    padding-top: 1px;                                            /*设置1px，解决上边距合并问题*/
+    background-color: rgba(0, 128, 0, 0.5);
+}
+
+.progress-inner p{
+    text-align: center;
+    margin-top: 9px;
+    font-family: "Microsoft YaHei";
+    font-size: 23px;
+}
+
+.progress-loading{
+    font: 30px "Microsoft YaHei";
+    text-align: center;
+}
+.progress-loading .loading-end{
+    display: inline-block;
+    width: 21px;
+    vertical-align: bottom;
+    overflow: hidden;
+    animation: 5s loading_show infinite;
+}
+@keyframes loading_show{
+    0%{width: 0px}
+    100%{width: 42px}
+}
+.progress-loading .loading-end p{
+    
+}
+.avatar{
+    position: absolute;
+    top: -420px;
+    left:  440px;
+    border-radius: 50px;
+}
