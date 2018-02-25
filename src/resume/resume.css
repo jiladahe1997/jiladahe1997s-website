@@ -382,6 +382,24 @@
     100%{opacity: 1}
 }
 
+.decorate-brief3{
+    position: absolute;
+    width: 208px;
+    top: 1399px;
+    left: 530px;
+}
+
+.decorate-brief4{
+    position: absolute;
+    width: 208px;
+    top: 1379px;
+    left: 780px;
+}
+.decorate-brief4 > li {
+    list-style: none;
+    margin: 10px 0;
+}
+
 
 
 
