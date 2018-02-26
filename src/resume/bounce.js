@@ -4,6 +4,7 @@ function bounce(){
     var fall_count = 1 ;
     var fall_b_pram = null ;
     var rotate_dirction_left = true;    
+    var rotate_dirction_counter = 0;
     var frame_skip_counter = 21;
     //var start_time = performance.now();
     //此处有个问题，requestAnimation函数的time参数和performance的起始值并不一样
@@ -114,6 +115,10 @@ function bounce(){
             start_time = null
             avatar.style = "";
             rotate_dirction_left = !rotate_dirction_left;
+            rotate_dirction_counter ++;
+            if (rotate_dirction_counter == 3) {
+                return
+            }
             requestAnimationFrame(avatar_anime);
         }
     }

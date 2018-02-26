@@ -97,10 +97,18 @@ function wheel_move(e,wheel_data) {
                 let brief = document.getElementsByClassName("brief")[0];
                 let decorate_brief1 = document.getElementsByClassName("decorate-brief1")[0];
                 let decorate_brief2 = document.getElementsByClassName("decorate-brief2")[0];
+                let decorate_brief4 = document.getElementsByClassName("decorate-brief4")[0];
+                for(let i=0;i<decorate_brief4.children.length;i++){
+                    for(let j=0;j<decorate_brief4.children[i].children.length;j++){
+                        decorate_brief4.children[i].children[j].classList.add("decorate-brief4-"+(i+1)+"-"+(j+1));
+                        console.log(decorate_brief4.children[i].children[j]);
+                    }
+                }
                 brief.classList.toggle("brief-show");
                 decorate_brief1.classList.toggle("decorate-brief1-show");
-                //decorate_brief1.classList.toggle("decorate-brief1-rotate");
+                //decorate_brief1.classList.toggle("decorate-brief1-rotate");         //发现css一次可以添加两个animation
                 decorate_brief2.classList.toggle("decorate-brief2-show");
+
                 break;
             default:
                 break;
