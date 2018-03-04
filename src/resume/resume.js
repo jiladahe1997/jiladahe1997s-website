@@ -36,18 +36,25 @@ window.onload = ()=>{
     let wheel_data={};
     wheel_data.countY = 0;
     window.addEventListener("wheel", (e)=>{wheel_move(e,wheel_data)});
+
+    //懒加载图片
+    window.addEventListener("wheel",lazy_load);
+    //顺序加载图片
+    order_load();
 }
 
 
 function wheel_move(e,wheel_data) {
     let rocket = document.getElementsByClassName("rocket")[0];
 
-        wheel_data.countY += e.deltaY ;
+        if(e.deltaMode == 0) wheel_data.countY += e.deltaY ;
+        else wheel_data.countY += e.deltaY/3*100;
         //小于零修正
         if (wheel_data.countY < 0 ) {
             wheel_data.countY = 0 ;
         }
         console.log("countY计数：",wheel_data.countY);
+        console.log("countY模式：",e.deltaMode);
 
         switch (wheel_data.countY/100) {
             case 0:
@@ -116,3 +123,37 @@ function wheel_move(e,wheel_data) {
 }
 
 
+function lazy_load(){
+    let lazy_img1 = document.getElementsByClassName("contact-phone")[0].children[0];
+    let lazy_img2 = document.getElementsByClassName("contact-qq")[0].children[0];
+    let lazy_img3 = document.getElementsByClassName("contact-mail")[0].children[0];
+    let window_Height = window.innerHeight;
+    let scroll_Height = window.scrollY;
+    let element_Height = document.getElementsByClassName("contact-phone")[0].children[0].offsetTop;
+
+    if (window_Height + scroll_Height >= element_Height) {
+        console.log(lazy_img1)
+        //开始加载
+        lazy_img1.setAttribute("src",lazy_img1.getAttribute("lazy-data"));
+        lazy_img2.setAttribute("src",lazy_img2.getAttribute("lazy-data"));
+        lazy_img3.setAttribute("src",lazy_img3.getAttribute("lazy-data"));
+    
+    }
+}
+
+
+function order_load(){
+    let img1 = document.getElementsByClassName("mainAchievement-personalGithub")[0].children[0];
+    let img2 = document.getElementsByClassName("mainAchievement-personalWebsite")[0].children[0];
+
+    //加载图片1：
+    img1.setAttribute("src",img1.getAttribute("order-data"));
+
+    img1.addEventListener("load",()=>{
+        console.warn("顺序加载，图片1加载完毕，开始加载图片2");
+        img2.setAttribute("src",img2.getAttribute("order-data"));
+        img2.addEventListener("load",()=>{
+            console.warn("顺序加载，图片2加载完毕");
+        })
+    })
+}

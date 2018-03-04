@@ -1,6 +1,10 @@
 *{
     box-sizing: border-box
 }
+img{
+    border: none;
+}
+
 .main{
     width: 100%;
     height: 3149px;
@@ -14,6 +18,8 @@
     margin: 0 auto;
 }
 .rocket{
+    width: 230px; height: 222px;
+    background: url('css_sprites.png') -1357px -433px;
     position: absolute;
     top: 202px;  
     left: 452px;
@@ -401,9 +407,12 @@
 }
 
     /*星星逐个出现*/
+.decorate-brief4 > li >img{
+    opacity: 0;
+}
+
 .decorate-brief4-1-1{
     animation: .5S 1s show4-1-1 forwards;
-    opacity:0;
 }
 @keyframes show4-1-1{
     0%{opacity: 0}
@@ -411,7 +420,6 @@
 }
 .decorate-brief4-1-2{
     animation: .5S 1.5s show4-1-2 forwards;
-    opacity:0;
 }
 @keyframes show4-1-2{
     0%{opacity: 0}
@@ -419,7 +427,6 @@
 }
 .decorate-brief4-1-3{
     animation: .5S 2s show4-1-3 forwards;
-    opacity:0;
 }
 @keyframes show4-1-3{
     0%{opacity: 0}
@@ -427,7 +434,7 @@
 }
 .decorate-brief4-1-4{
     animation: .5S 2.5s show4-1-4 forwards;
-    opacity:0;
+
 }
 @keyframes show4-1-4{
     0%{opacity: 0}
@@ -436,7 +443,6 @@
 
 .decorate-brief4-2-1{
     animation: .5S 3s show4-1-1 forwards;
-    opacity:0;
 }
 @keyframes show4-2-1{
     0%{opacity: 0}
@@ -444,7 +450,6 @@
 }
 .decorate-brief4-2-2{
     animation: .5S 3.5s show4-1-2 forwards;
-    opacity:0;
 }
 @keyframes show4-2-2{
     0%{opacity: 0}
@@ -452,7 +457,6 @@
 }
 .decorate-brief4-2-3{
     animation: .5S 4s show4-1-3 forwards;
-    opacity:0;
 }
 @keyframes show4-2-3{
     0%{opacity: 0}
@@ -461,7 +465,6 @@
 
 .decorate-brief4-3-1{
     animation: .5S 4.5s show4-1-1 forwards;
-    opacity:0;
 }
 @keyframes show432-1{
     0%{opacity: 0}
@@ -469,7 +472,6 @@
 }
 .decorate-brief4-3-2{
     animation: .5S 5s show4-1-2 forwards;
-    opacity:0;
 }
 @keyframes show4-3-2{
     0%{opacity: 0}
@@ -477,7 +479,6 @@
 }
 .decorate-brief4-3-3{
     animation: .5S 5.5s show4-1-3 forwards;
-    opacity:0;
 }
 @keyframes show4-3-3{
     0%{opacity: 0}
@@ -486,7 +487,7 @@
 
 .decorate-brief4-4-1{
     animation: .5S 6s show4-1-1 forwards;
-    opacity:0;
+ 
 }
 @keyframes show4-4-1{
     0%{opacity: 0}
@@ -494,7 +495,7 @@
 }
 .decorate-brief4-4-2{
     animation: .5S 6.5s show4-1-2 forwards;
-    opacity:0;
+
 }
 @keyframes show4-4-2{
     0%{opacity: 0}
@@ -502,7 +503,7 @@
 }
 .decorate-brief4-4-3{
     animation: .5S 7s show4-1-3 forwards;
-    opacity:0;
+
 }
 @keyframes show4-4-3{
     0%{opacity: 0}
