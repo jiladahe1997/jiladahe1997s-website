@@ -49,6 +49,7 @@ ul.nav{
 	margin: 150px auto;
 	list-style: none;
 	padding: 0;
+	font-size: 0;        /*修复inline-block的间隙*/
 }
 
 li{
@@ -57,8 +58,13 @@ li{
 .navButton-left{
 	width:250px;
 	height: 40px;
-	border-width: 1px 0px 1px 1px;
+	border-width: 2px 2px 2px 2px;
 	border-radius: 4px 0px 0px 4px;
+}
+.navButton-second{
+	width:250px;
+	height: 40px;
+	border-width: 1px 1px 1px 1px;
 }
 .navButton-right{
 	width:250px;
