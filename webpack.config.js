@@ -103,9 +103,6 @@ module.exports = {
                     },
                     {
 						loader: "extract-loader",
-						options: {
-                            publicPath: null,
-                        }
                     },
                     {
                         loader: "html-loader",
