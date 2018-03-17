@@ -51,6 +51,9 @@ function AppNvaigation(props){
 				<a  href="/index" className="navButton-left button button-glow button-rounded button-raised button-primary">首页</a>
 			</li>
 			<li>
+				<a  href="/index-vue" className="navButton button button-glow button-border button-rounded button-primary">首页-vew重构</a>
+			</li>
+			<li>
 				<a  href="/note" className="navButton button button-glow button-border button-rounded button-primary">学习笔记</a>
 			</li>
 			<li>
@@ -101,3 +104,8 @@ for(var i=0;i<4;i++){
 		alert("正在建设中");
 	}
 }
+
+ if (module.hot) {
+	module.hot.accept()
+	console.log('Accepting the updated printMe module!');
+ }

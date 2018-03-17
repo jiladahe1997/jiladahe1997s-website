@@ -1,6 +1,7 @@
 var express = require ("express");
 var app = express();
 var index = require ("./routes/index.js");
+var index_vue = require ("./routes/index_vue.js");
 var login = require ("./routes/login.js");
 var note = require ("./routes/note.js");
 var resume = require("./routes/resume.js");
@@ -11,6 +12,7 @@ app.use(express.static("build"));
 app.use(cookieParser());
 
 app.use(index);
+app.use(index_vue);
 app.use(login);
 app.use(note);
 app.use(resume);

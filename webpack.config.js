@@ -1,14 +1,39 @@
 
 const path = require('path');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const webpack = require("webpack")
 
 module.exports = {
 	entry:{
 		index : './src/index/index.js',
+		index_vue :"./src/index_vue/index_vue.js",
 		login : './src/login/custom-js.js',
 		note : './src/note/note.js',
-		note_detail : './src/note_detail/note_detail.js',
-		manage : './src/manage/manage.js',
-		resume : './src/resume/resume.js'
+		
+		//以下入口已废弃
+		//note_detail : './src/note_detail/note_detail.js',
+		//manage : './src/manage/manage.js',
+
+		//以下入口为了测试速度更快，暂时屏蔽
+		//resume : './src/resume/resume.js'
+	},
+	devServer:{
+		contentBase: './build',
+		port:9000,
+		hot:true
+	},
+	plugins:[
+		new HtmlWebpackPlugin({
+			title:"Outpur Management",
+			filename: 'test.html'
+		}),
+		new webpack.NamedModulesPlugin(),
+		new webpack.HotModuleReplacementPlugin()
+	],
+	resolve: {
+		alias: {
+		  'vue$': 'vue/dist/vue.esm.js' // 用 webpack 1 时需用 'vue/dist/vue.common.js'
+		}
 	},
 	output:{
 		filename:'[name].js',
@@ -77,7 +102,7 @@ module.exports = {
                         },
                     },
                     {
-                        loader: "extract-loader",
+						loader: "extract-loader",
                     },
                     {
                         loader: "html-loader",

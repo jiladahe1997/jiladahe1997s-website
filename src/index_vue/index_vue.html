@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>index-vue</title>
+    <link rel="stylesheet" href="./public/buttons.css">
+</head>
+<body>
+    <script id="avatar" type="text/template">
+        <div class="avatar">
+            <img src="https://www.gravatar.com/avatar/3edc01cbcb343fae0030d2dfcfb40166?s=100" alt="">
+        </div>
+    </script>
+    <script id="Introduction" type="text/template">
+        <div class="breif">
+            <h1>欢迎来到碧哥の站</h1>
+            <hr/>
+            <p class="breifPragraph">
+                这是一个私人搭建的网站<br/>
+                旨在分享我本人的一些学习笔记、感悟以及经验<br/>
+                另有一些模块应用于存储一些私人文件或用于朋友间的交流<br/>
+                这些部分需要额外的权限才能浏览
+            </p>
+        </div>
+    </script>
+    <script id="nav" type="text/template">
+        <ul class="nav">
+            <li>
+                <a  href="/index" class="navButton-left button button-glow button-border button-rounded button-primary">首页</a>
+            </li>
+            <li>
+                <a  href="/index-vue" class="navButton-second  button button-glow button-rounded button-raised button-primary">首页-vew重构</a>
+            </li>
+            <li>
+                <a  href="/note" class="navButton button button-glow button-border button-rounded button-primary">学习笔记</a>
+            </li>
+            <li>
+                <a  href="/resume" class="navButton button button-glow button-border button-rounded button-primary">个人简历(18年)</a>
+            </li>
+            <li>
+                <a  href="/login" class="navButton-right button button-glow button-border button-rounded button-primary">Private</a>
+            </li>
+        </ul>
+    </script>
+    <script id="footer" type="text/template">
+        <div class="footer">
+			<p class="projectAddress">本项目地址 : <a href="https://github.com/jiladahe1997" target="new"><i>https://github.com/jiladahe1997</i></a></p>
+		</div>
+    </script>
+
+    <div id="app" class="app">
+        <vue-avatar></vue-avatar>
+        <vue-introduction></vue-introduction>
+        <vue-nav></vue-nav>
+        <vue-footer></vue-footer>
+    <script src="vue.js"></script>
+</body>
+</html>
