@@ -79,6 +79,56 @@ function AppFooter(props){
 }
 
 
+/* 服务器状态组件 */
+
+class ServerState extends React.Component{
+	constructor(props){
+		super(props);
+		this.state = {
+			startTime : null,
+			nowTime : null,
+		}
+		this.getTime = this.getTime.bind(this);
+	}
+
+	componentDidMount(){
+		this.tickId = setInterval(this.getTime,1000);
+	}
+
+	componentWillUnmount(){
+		clearInterval(this.tickId)
+	}
+
+	getTime(){
+		let ajax = new XMLHttpRequest();
+		ajax.open("get","./ajax/server_time");
+		ajax.onreadystatechange = ()=>{
+			if(ajax.readyState == ajax.DONE){
+				if(ajax.status == 200 ){
+					console.log(typeof(ajax.response));
+					this.setState({
+						startTime:JSON.parse(ajax.response).startTime,
+						nowTime : JSON.parse(ajax.response).nowTime,
+					})
+					return
+				}
+			}
+			this.setState({
+				startTime : '获取失败',
+				nowTime : '获取失败'
+			})
+		}
+		ajax.send();
+	}
+
+	render(){
+		return <div className='serverTime'>
+			服务器运行时间：<p>{this.state.startTime} -----</p>
+			<p> {this.state.nowTime}</p>
+		</div>
+	}
+}
+
 /*组件汇总*/
 function App(props){
 	return (
@@ -86,6 +136,7 @@ function App(props){
 			<AppAvatar />
 			<AppNvaigation />
 			<AppFooter />
+			<ServerState />
 		</div>
 	);
 }
@@ -96,16 +147,5 @@ ReactDom.render(
 )
 
 
-var $li=document.getElementsByName("testTemp");
 
-for(var i=0;i<4;i++){
-	$li[i].onclick=function(){
-		console.log("正在建设中");
-		alert("正在建设中");
-	}
-}
 
- if (module.hot) {
-	module.hot.accept()
-	console.log('Accepting the updated printMe module!');
- }

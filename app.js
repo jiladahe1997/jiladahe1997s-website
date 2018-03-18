@@ -5,6 +5,7 @@ var index_vue = require ("./routes/index_vue.js");
 var login = require ("./routes/login.js");
 var note = require ("./routes/note.js");
 var resume = require("./routes/resume.js");
+var ajax = require('./routes/ajax.js');
 
 var cookieParser = require("cookie-parser");
 
@@ -16,7 +17,7 @@ app.use(index_vue);
 app.use(login);
 app.use(note);
 app.use(resume);
-
+app.use(ajax);
 
 
 app.get('/',function(req,res){

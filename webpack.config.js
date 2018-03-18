@@ -6,9 +6,6 @@ const webpack = require("webpack")
 module.exports = {
 	entry:{
 		index : './src/index/index.js',
-		index_vue :"./src/index_vue/index_vue.js",
-		login : './src/login/custom-js.js',
-		note : './src/note/note.js',
 		
 		//以下入口已废弃
 		//note_detail : './src/note_detail/note_detail.js',
@@ -16,6 +13,10 @@ module.exports = {
 
 		//以下入口为了测试速度更快，暂时屏蔽
 		//resume : './src/resume/resume.js'
+		/*index_vue :"./src/index_vue/index_vue.js",
+		login : './src/login/custom-js.js',
+		note : './src/note/note.js',*/
+
 	},
 	devServer:{
 		contentBase: './build',

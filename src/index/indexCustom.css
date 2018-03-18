@@ -89,3 +89,18 @@ li{
 	color: #000;
 
 }
+
+/* 时间部分CSS */
+.serverTime{
+	position: relative;
+    text-align: right;
+    bottom: 270px;
+}
+
+.serverTime > p:first-child {
+	display: inline-block;
+}
+
+.serverTime > *{
+	margin: 0
+}
