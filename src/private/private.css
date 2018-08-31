@@ -1,0 +1,30 @@
+.items_img{
+    width: 200px;
+
+
+}
+
+
+.items_ul{
+    padding: 0;
+    margin: auto 300px;
+}
+.items_li{
+    display: inline-block;
+    list-style: none
+}
+
+
+.items_li > a{
+    text-align: center;
+    color: black;
+    text-decoration: none;
+}
+
+
+.inputBox{
+    text-align: center;
+    margin-top: 130px;
+    margin-bottom: 100px;
+}
+

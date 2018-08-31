@@ -12,30 +12,32 @@ module.exports = {
 		//manage : './src/manage/manage.js',
 
 		//以下入口为了测试速度更快，暂时屏蔽
-		//resume : './src/resume/resume.js'
-		/*index_vue :"./src/index_vue/index_vue.js",
+		resume : './src/resume/resume.js',
+		//index_vue :"./src/index_vue/index_vue.js",
 		login : './src/login/custom-js.js',
-		note : './src/note/note.js',*/
+		note : './src/note/note.js',
+		//private : './src/private/private.js',
+		//test:"./src/test/test.js"
 
 	},
-	devServer:{
+	/*devServer:{
 		contentBase: './build',
 		port:9000,
 		hot:true
-	},
-	plugins:[
+	},*/
+	/*plugins:[
 		new HtmlWebpackPlugin({
 			title:"Outpur Management",
 			filename: 'test.html'
 		}),
 		new webpack.NamedModulesPlugin(),
 		new webpack.HotModuleReplacementPlugin()
-	],
-	resolve: {
+	],*/
+	/*resolve: {
 		alias: {
 		  'vue$': 'vue/dist/vue.esm.js' // 用 webpack 1 时需用 'vue/dist/vue.common.js'
 		}
-	},
+	},*/
 	output:{
 		filename:'[name].js',
 		path:path.resolve(__dirname,'build')
@@ -68,13 +70,20 @@ module.exports = {
 				}
 			},
 			{
+				test:/private\.css/,
+				loader:"style-loader!css-loader?modules"
+			},
+			{
 				test:/\.css$/,
+				exclude:/private\.css/,
 				use:[
 					{
 						loader:'style-loader'
 					},
 					{
 						loader:'css-loader'
+						//开启cssmodule模式
+						//loader:'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'
 					},
 					{
 						loader:"postcss-loader"

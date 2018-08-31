@@ -11,7 +11,7 @@ var bounce = require("./bounce.js");
         let progress_inner = document.getElementsByClassName("progress-inner")[0];
         if(!start_time) start_time=time;
 
-        let duration_total = 15000;                  //动画预计持续总时间
+        let duration_total = 9000;                  //动画预计持续总时间
         let duration_now = time - start_time ;      //动画目前持续时间
 
         let progress_time = duration_now/duration_total;  //时间进度
@@ -25,7 +25,7 @@ var bounce = require("./bounce.js");
         }
         else{
             document.getElementsByClassName("loading-bg")[0].style.display = "none";
-            document.getElementsByClassName("main")[0].style = "";
+            document.getElementsByClassName("main")[0].style.position = "static";
             console.log("动画结束！");
         }
     
@@ -47,6 +47,7 @@ window.onload = ()=>{
 function wheel_move(e,wheel_data) {
     let rocket = document.getElementsByClassName("rocket")[0];
 
+        //兼容chrome和firefox
         if(e.deltaMode == 0) wheel_data.countY += e.deltaY ;
         else wheel_data.countY += e.deltaY/3*100;
         //小于零修正
@@ -65,12 +66,14 @@ function wheel_move(e,wheel_data) {
                 break;
             case 2:
                 rocket.style.top = 202+(432-202)/1+"px";
+                rocket.style.left = 452+"px";
+                rocket.style.transform = "rotate(0deg)";
                 let name = document.getElementsByClassName("name")[0];
                 let decorate_moon = document.getElementsByClassName("decorate-moon")[0];
                 let summary_right = document.getElementsByClassName("summary-right")[0];
-                name.classList.toggle("name-show");
-                decorate_moon.classList.toggle("decorate-moon-show");
-                summary_right.classList.toggle("summary-right-show");
+                name.classList.add("name-show");
+                decorate_moon.classList.add("decorate-moon-show");
+                summary_right.classList.add("summary-right-show");
                 break;
             case 3:
                 rocket.classList.toggle("rocket_left_down_1");
@@ -86,9 +89,9 @@ function wheel_move(e,wheel_data) {
                 let school = document.getElementsByClassName("school")[0];
                 let decorate_school1 = document.getElementsByClassName("decorate-school1")[0];
                 let decorate_school2 = document.getElementsByClassName("decorate-school2")[0];
-                school.classList.toggle("school-show");
-                decorate_school1.classList.toggle("decorate-school1-show");
-                decorate_school2.classList.toggle("decorate-school2-show");
+                school.classList.add("school-show");
+                decorate_school1.classList.add("decorate-school1-show");
+                decorate_school2.classList.add("decorate-school2-show");
                 break;
             case 5:
                 rocket.classList.toggle("rocket_right_down_1");
@@ -111,10 +114,10 @@ function wheel_move(e,wheel_data) {
                         console.log(decorate_brief4.children[i].children[j]);
                     }
                 }
-                brief.classList.toggle("brief-show");
-                decorate_brief1.classList.toggle("decorate-brief1-show");
+                brief.classList.add("brief-show");
+                decorate_brief1.classList.add("decorate-brief1-show");
                 //decorate_brief1.classList.toggle("decorate-brief1-rotate");         //发现css一次可以添加两个animation
-                decorate_brief2.classList.toggle("decorate-brief2-show");
+                decorate_brief2.classList.add("decorate-brief2-show");
 
                 break;
             default:

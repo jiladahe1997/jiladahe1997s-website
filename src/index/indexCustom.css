@@ -12,7 +12,7 @@ a{
 	color: #000;
 }
 .app{
-	background-image: url(avatarbackground.jpg);
+	background-image: url(./avatarbackground.jpg);
 	background-position: center;
 	background-repeat: no-repeat;
 	height:500px;
@@ -45,7 +45,7 @@ a{
 /*第二部分css*/
 ul.nav{
 	display: block;
-	width: 1250px;
+	width: 1000px;
 	margin: 150px auto;
 	list-style: none;
 	padding: 0;
@@ -94,7 +94,8 @@ li{
 .serverTime{
 	position: relative;
     text-align: right;
-    bottom: 270px;
+	bottom: 270px;
+	right: 150px;
 }
 
 .serverTime > p:first-child {

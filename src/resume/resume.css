@@ -19,24 +19,25 @@ img{
 }
 .rocket{
     width: 230px; height: 222px;
-    background: url('css_sprites.png') -1357px -433px;
+    background: url('rocket.png');
+    /*background: url('css_sprites.png') -1357px -433px;*/
     position: absolute;
     top: 202px;  
     left: 452px;
-    transition: top 1s;
+    transition: top .1s;
 }
 
 .rocket_left_down_1{
-    transition: top .5s ,left .5s 1s ,transform 1.5s;
+    transition: top .1s ,left  .1s ,transform .1s;
 }
 .rocket_left_down_2{
-    transition: top .5s 1s ,left .5s  ,transform 1.5s;
+    transition: top .1s  ,left .1s  ,transform .1s;
 }
 .rocket_right_down_1{
-    transition: top .5s ,left .5s 1s ,transform 1.5s;
+    transition: top .1s ,left  .1s ,transform .1s;
 }
 .rocket_right_down_2{
-    transition: top .5s 1s ,left .5s  ,transform 1.5s;
+    transition: top .1s  ,left .1s  ,transform .1s;
 }
 
  /*第一阶段 ：   top 432pxl left 812px
