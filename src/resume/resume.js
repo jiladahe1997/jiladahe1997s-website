@@ -57,7 +57,7 @@ function wheel_move(e,wheel_data) {
         console.log("countY计数：",wheel_data.countY);
         console.log("countY模式：",e.deltaMode);
 
-        switch (wheel_data.countY/100) {
+        switch (parseInt(wheel_data.countY/100)) {
             case 0:
                 rocket.style.top = 202+"px";
                 break;
