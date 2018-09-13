@@ -16,7 +16,7 @@ module.exports = {
 		//index_vue :"./src/index_vue/index_vue.js",
 		login : './src/login/custom-js.js',
 		note : './src/note/note.js',
-		//private : './src/private/private.js',
+		private : './src/private/private.js',
 		//test:"./src/test/test.js"
 
 	},
