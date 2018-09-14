@@ -1,9 +1,17 @@
 import "./resume.css"
 import "./resume.html"
+import "./bg.png"
 var bounce = require("./bounce.js");
+function no_wheel(e){
+    e.preventDefault()
+}
+window.addEventListener("wheel",no_wheel)
+window.onload = function(){
+
+}
 
 //loading 动画
-(function(){
+;(function(){
     bounce();
     let start_time=null;
 
@@ -27,6 +35,9 @@ var bounce = require("./bounce.js");
             document.getElementsByClassName("loading-bg")[0].style.display = "none";
             document.getElementsByClassName("main")[0].style.position = "static";
             console.log("动画结束！");
+
+            window.removeEventListener('wheel',no_wheel)
+
         }
     
     })
@@ -40,7 +51,8 @@ window.onload = ()=>{
     //懒加载图片
     window.addEventListener("wheel",lazy_load);
     //顺序加载图片
-    order_load();
+    //删除顺序加载
+    //order_load();
 }
 
 

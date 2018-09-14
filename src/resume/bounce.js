@@ -32,21 +32,21 @@ function bounce(){
         let progess_anime = function(){                  //动画进度，动画进度和时间进度不对应，以此来实现动画的快慢控制
             let g_pram = 10; //重力参数
             let z_pram = 0.3 ;//弹力参数
-            console.log("fall_count%2",fall_count%2)
+            //console.log("fall_count%2",fall_count%2)
             if(fall_count == 1 ){
-                console.log("掉落计数",fall_count);
-                console.log("调试",g_pram*Math.pow(progess_time,2 )>=1);
+                //console.log("掉落计数",fall_count);
+                //console.log("调试",g_pram*Math.pow(progess_time,2 )>=1);
                 if( g_pram*Math.pow(progess_time,2) >= 1) fall_count++;
                 return g_pram*Math.pow(progess_time,2);
             }
             else{
-                console.log("上升计数",fall_count);
+                //console.log("上升计数",fall_count);
                 if(!fall_b_pram) fall_b_pram = Math.sqrt(1/g_pram,2)+Math.sqrt(z_pram/g_pram,2);
-                console.log("第二次正确B值",Math.sqrt(1/g_pram,2)+Math.sqrt(z_pram/g_pram,2));
-                console.log("第三次正确B值",Math.sqrt(1/g_pram,2)+Math.sqrt(z_pram/g_pram,2)+Math.sqrt(Math.pow(z_pram,2)/g_pram,2)+Math.sqrt(Math.pow(z_pram,1)/g_pram,2))
-                console.log("第四次正确B值",Math.sqrt(1/g_pram,2)+Math.sqrt(z_pram/g_pram,2)+Math.sqrt(Math.pow(z_pram,2)/g_pram,2)+Math.sqrt(Math.pow(z_pram,1)/g_pram,2)+Math.sqrt(Math.pow(z_pram,3)/g_pram,2)+Math.sqrt(Math.pow(z_pram,2)/g_pram,2))
+                //console.log("第二次正确B值",Math.sqrt(1/g_pram,2)+Math.sqrt(z_pram/g_pram,2));
+                //console.log("第三次正确B值",Math.sqrt(1/g_pram,2)+Math.sqrt(z_pram/g_pram,2)+Math.sqrt(Math.pow(z_pram,2)/g_pram,2)+Math.sqrt(Math.pow(z_pram,1)/g_pram,2))
+                //console.log("第四次正确B值",Math.sqrt(1/g_pram,2)+Math.sqrt(z_pram/g_pram,2)+Math.sqrt(Math.pow(z_pram,2)/g_pram,2)+Math.sqrt(Math.pow(z_pram,1)/g_pram,2)+Math.sqrt(Math.pow(z_pram,3)/g_pram,2)+Math.sqrt(Math.pow(z_pram,2)/g_pram,2))
 
-                console.log("b",fall_b_pram);
+                //console.log("b",fall_b_pram);
                 if( g_pram*Math.pow(progess_time-fall_b_pram,2) + 1 - Math.pow(z_pram,fall_count-1) >= 1 ) {
                     frame_skip_counter = 0;
                     fall_count++;
@@ -56,18 +56,18 @@ function bounce(){
             }
         }();
 
-        console.log("progess_time",progess_time)
-        console.log("progess_anime",progess_anime)
+        //console.log("progess_time",progess_time)
+       // console.log("progess_anime",progess_anime)
         avatar.style.top = 375*progess_anime + "px";
         //调试
-        console.log("avatar.style.top:",avatar.style.top);
+        //console.log("avatar.style.top:",avatar.style.top);
 
         if(duration_now < duration_total - 100){
             requestAnimationFrame(avatar_anime);
         }
         else{
             //avatar.style.top = 200 + "px";
-            console.log("动画结束！");
+            //console.log("动画结束！");
             start_time = null;
             fall_count = 1 ;
             fall_b_pram = null ;
@@ -101,7 +101,7 @@ function bounce(){
         }
         else{
             let progess_anime = Math.pow(2*progess_time-1,2);
-            console.log(progess_anime);
+            //console.log(progess_anime);
             avatar.style.top = 372.55 + 420*progess_anime+ "px";
             avatar.style.opacity = 1 - 1*progess_anime;
         }
