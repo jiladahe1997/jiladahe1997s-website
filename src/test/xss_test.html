@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <p>XSS测试页面，以下为你提交的内容，所有用户都能看到</p>
+    <p id="text"></p>
+    <p id="xss">
+
+    </p>
+
+    <form action="/test/xss_test" method="post" target="__blank">
+        <label for="xss_input">    <p>提交新的XSS</p></label>
+        <textarea type="text" name="xss" id="xss_input" >&quot;&lt;script&gt;alert("XSS!")&lt;/script&gt;&quot;</textarea>
+        <button type="submit">提交</button>
+    </form>
+    <div>
+        ajax接口使用innerHTML插入html，因此script标签会被解析为&#60。<br>
+        可以使用&#60img src = x onerror = "alert('1')"/> 
+    </div>
+</body>
+    <script>
+    var ajax = new XMLHttpRequest()
+    ajax.open('get',"/test/ajax/xss")
+    ajax.onreadystatechange = function(){
+        if (ajax.readyState == 4) {
+            if (ajax.status ==200) {
+                var text = document.getElementById('text')
+                var xss = document.getElementById('xss')
+                console.log(ajax.responseText);
+                
+                text.innerHTML = '"' + ajax.responseText + '"'
+                xss.innerHTML = ajax.responseText
+                //或者使用creatElment+append，这样不处理script
+            }
+            
+        }
+    }
+    ajax.send()
+    </script>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    
+</body>
+<script>
+    var ajax = new XMLHttpRequest()
+    ajax.open("get","/test/ajax/csrf")
+    ajax.onreadystatechange = function(){
+        if (ajax.readyState == 4) {
+            if (ajax.status == 200) {
+                document.getElementsByTagName('body')[0].innerHTML= "上次RenMingRui用户访问本页面时间："+ajax.responseText
+            }
+        }
+    }
+    ajax.send()
+</script>
+</html>

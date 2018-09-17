@@ -5,7 +5,7 @@ var bounce = require("./bounce.js");
 function no_wheel(e){
     e.preventDefault()
 }
-window.addEventListener("wheel",no_wheel)
+document.getElementsByTagName('body')[0].addEventListener("wheel",no_wheel)
 window.onload = function(){
 
 }
@@ -36,17 +36,17 @@ window.onload = function(){
             document.getElementsByClassName("main")[0].style.position = "static";
             console.log("动画结束！");
 
-            window.removeEventListener('wheel',no_wheel)
-
+            document.getElementsByTagName('body')[0].removeEventListener('wheel',no_wheel)
+            let wheel_data={};
+            wheel_data.countY = 0;
+            window.addEventListener("wheel", (e)=>{wheel_move(e,wheel_data)});
         }
     
     })
 })()
 
 window.onload = ()=>{
-    let wheel_data={};
-    wheel_data.countY = 0;
-    window.addEventListener("wheel", (e)=>{wheel_move(e,wheel_data)});
+
 
     //懒加载图片
     window.addEventListener("wheel",lazy_load);
