@@ -9,9 +9,12 @@ var note = require ("./routes/note.js");
 var resume = require("./routes/resume.js");
 var ajax = require('./routes/ajax.js');
 var websocket = require("./routes/websocket.js")
+var compression = require("compression")
 
 
 var cookieParser = require("cookie-parser");
+
+app.use(compression())
 
 app.use(express.static("build"));
 app.use(cookieParser());

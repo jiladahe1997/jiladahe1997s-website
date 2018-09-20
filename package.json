@@ -12,6 +12,7 @@
     "ajv": "^6.2.1",
     "ajv-keywords": "^3.1.0",
     "body-parser": "^1.18.2",
+    "compression": "^1.7.3",
     "cookie-parser": "^1.4.3",
     "debug": "~2.6.9",
     "express": "~4.15.5",

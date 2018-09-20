@@ -126,5 +126,8 @@ router.post("/test/xss_test",function(req,res){
     lastXss = req.body.xss
     res.send("提交成功")
 })
+router.get("/test/ajax/xss_js",function(req,res){
+    res.send('";alert(1);"')
+})
 
 module.exports = router
