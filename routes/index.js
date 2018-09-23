@@ -10,5 +10,8 @@ router.get("/index",function(req,res,next){
 	res.sendFile("src/index/index.html",options);
 	//res.sendFile("build/note1-1.md",options)
 });
+router.get("/index/redirect",(req,res)=>{
+	res.redirect("http://192.168.0.1")
+})
 
 module.exports = router;
