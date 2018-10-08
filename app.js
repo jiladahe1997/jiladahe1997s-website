@@ -8,13 +8,18 @@ var private = require("./routes/private.js")
 var note = require ("./routes/note.js");
 var resume = require("./routes/resume.js");
 var ajax = require('./routes/ajax.js');
-var websocket = require("./routes/websocket.js")
-var compression = require("compression")
+var websocket = require("./routes/websocket.js");
+var compression = require("compression");
+var morgan = require('morgan');
+var fs = require("fs");
+var path = require("path")
 
 
 var cookieParser = require("cookie-parser");
 
 app.use(compression())
+var fileStream = fs.createWriteStream(path.join(__dirname,'access_log'),{flag:'a'})
+app.use(morgan('combined',{stream:fileStream}))
 
 app.use(express.static("build"));
 app.use(cookieParser());
