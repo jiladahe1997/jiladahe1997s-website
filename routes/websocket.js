@@ -25,7 +25,7 @@ function get_time(){
     var month = /\bJan\b|\bFeb\b|\bMar\b|\bApr\b|\bMay\b|\bJun\b|\bJul\b|\bAug\b|\bSep\b|\bOct\b|\bNov\b|\bDec\b/
     var date = /\b\d{1,2}\b/
     var time = /\b\d{2}:\d{2}:\d{2}\b/
-    var day = /\bMon\b|\bThu\b|\bWen\b|\bThu\b|\bFri\b|\bSat\b|\bSun\b|/
+    var day = /\bMon\b|\bTue\b|\bWen\b|\bThu\b|\bFri\b|\bSat\b|\bSun\b|/
   
     year = a.match(year);
     month = monthTable.indexOf(a.match(month)[0]) + 1 ;

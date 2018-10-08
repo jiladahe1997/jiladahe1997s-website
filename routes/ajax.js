@@ -76,5 +76,58 @@ function get_time(){
     return year+'年'+month+"月"+date+"日"+" "+time+" "+"星期"+day
 }
   
+//csrf测试接口
+var lastCsrf = new Date()
+router.get("/test/ajax/csrf",function(req,res){
+    res.send(lastCsrf.toLocaleString())
+})
+
+router.get("/test/csrf_test",function(req,res){
+    var options = {
+		root : path.dirname(__dirname)
+	};
+	res.sendFile("src/test/csrf_test.html",options);
+})
+router.get("/test/csrf_test_result",function(req,res){
+    console.log(req.query)
+    try {
+        if(req.query.name == "RenMingrui") lastCsrf = new Date()
+        //console.log(lastCsrf)
+        var options = {
+            root : path.dirname(__dirname)
+        };
+        res.sendFile("src/test/csrf_test_result.html",options);
+    } catch (error) {
+        //console.log(error)
+        res.sendFile("src/test/csrf_test_result.html",options);
+
+    }
+
+})
+
+//xss测试部分
+var bodyParser = require('body-parser')
+
+router.use(bodyParser.urlencoded())
+
+var lastXss = ""
+router.get("/test/xss_test",function(req,res){
+    var options = {
+		root : path.dirname(__dirname)
+	};
+	res.sendFile("src/test/xss_test.html",options);
+
+})
+router.get("/test/ajax/xss",function(req,res){
+    res.send(lastXss)
+})
+router.post("/test/xss_test",function(req,res){
+    console.log(req.body)
+    lastXss = req.body.xss
+    res.send("提交成功")
+})
+router.get("/test/ajax/xss_js",function(req,res){
+    res.send('";alert(1);"')
+})
 
 module.exports = router
