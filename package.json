@@ -4,9 +4,12 @@
   "private": true,
   "main": "webpack.config.js",
   "scripts": {
-    "build": "webpack --config webpack.prod.config.js ",
+    "build-prod": "webpack --config webpack.prod.config.js ",
+    "build-dev": "webpack --config webpack.config.js",
     "watch": "webpack --watch",
-    "start": "webpack-dev-server --open"
+    "webpackDev-start": "webpack-dev-server --open",
+    "start-prod": "node app.js NODE_ENV=production",
+    "start-local": "node app.js NODE_ENV=local"
   },
   "dependencies": {
     "ajv": "^6.2.1",

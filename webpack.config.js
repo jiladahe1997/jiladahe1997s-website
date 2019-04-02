@@ -5,19 +5,21 @@ const webpack = require("webpack")
 
 module.exports = {
 	entry:{
-		index : './src/index/index.js',
 		
 		//以下入口已废弃
 		//note_detail : './src/note_detail/note_detail.js',
 		//manage : './src/manage/manage.js',
 
 		//以下入口为了测试速度更快，暂时屏蔽
-		resume : './src/resume/resume.js',
+		//resume : './src/resume/resume.js',
 		//index_vue :"./src/index_vue/index_vue.js",
-		login : './src/login/custom-js.js',
-		note : './src/note/note.js',
-		private : './src/private/private.js',
+		//login : './src/login/custom-js.js',
+		//note : './src/note/note.js',
+		//private : './src/private/private.js',
+		//private_vue: './src/private_vue/private_vue.js'
 		//test:"./src/test/test.js"
+		index: './src/index/index.js',
+
 
 	},
 	/*devServer:{
@@ -38,6 +40,7 @@ module.exports = {
 		  'vue$': 'vue/dist/vue.esm.js' // 用 webpack 1 时需用 'vue/dist/vue.common.js'
 		}
 	},*/
+	devtool: 'inline-source-map',  //仅开发用，sourcemao启用
 	output:{
 		filename:'[name].js',
 		path:path.resolve(__dirname,'build')

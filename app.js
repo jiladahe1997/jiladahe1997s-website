@@ -1,3 +1,4 @@
+var process = require("process")
 var express = require ("express");
 var app = express();
 var expressWebSocket = require("express-ws")(app)
@@ -9,6 +10,7 @@ var note = require ("./routes/note.js");
 var resume = require("./routes/resume.js");
 var ajax = require('./routes/ajax.js');
 var websocket = require("./routes/websocket.js");
+var ml = require("./routes/ml.js")
 var compression = require("compression");
 var morgan = require('morgan');
 var fs = require("fs");
@@ -22,6 +24,7 @@ var fileStream = fs.createWriteStream(path.join(__dirname,'access_log'),{flag:'a
 app.use(morgan('combined',{stream:fileStream}))
 
 app.use(express.static("build"));
+app.use(express.static("src/ml"))
 app.use(cookieParser());
 
 app.use(index);
@@ -31,14 +34,17 @@ app.use(private)
 app.use(note);
 app.use(resume);
 app.use(ajax);
-app.use(websocket)
+app.use(websocket);
+app.use(ml);
+
 
 app.get('/',function(req,res){
 	res.redirect("/index");
 })
-var server = app.listen(3000,function(){
+let port = process.env.NODE_ENV === 'production' ? 80 : 3000
+var server = app.listen(port,function(){
 	var host = server.address().address;
 	var port = server.address().port;
 
-	console.log("server listen on localhost 3000");
+	console.log(`server listen on localhost ${port}`);
 })

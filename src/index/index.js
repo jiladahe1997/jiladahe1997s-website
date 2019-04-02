@@ -59,6 +59,9 @@ function AppNvaigation(props){
 			<li>
 				<a  href="/login" className="navButton-right button button-glow button-border button-rounded button-primary">Private</a>
 			</li>
+			<li>
+				<a href="/ml" className="navButton-right button button-glow button-border button-rounded button-primary">毕业设计</a>
+			</li>
 		</ul>
 	)
 }
