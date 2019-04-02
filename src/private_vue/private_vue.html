@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <app-searchbox></app-searchbox>
+        <app-container></app-container>
+    </div>
+    <script src="private_vue.js"></script>
+    <script type="text/x-template" id="app-searchbox">
+        <input @input="input" type="text" class="appSearchbox">
+    </script>
+    <script type="text/x-template" id="appContainer">
+        <item v-for="item in items"></item>
+    </script>
+    <script type="text/x-template" id="item">
+        <item-img></item-img>
+        <item-text></item-text>
+    </script>
+    <script type="text/x-template" id="itemImg">
+        <img :src="imgSrc" alt="">
+    </script>
+    <script type="text/x-template" id="itemText">
+        <p>{{imgText}}</p>
+    </script>
+
+</body>
+
+
+</html>

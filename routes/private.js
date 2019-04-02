@@ -11,6 +11,10 @@ var option = {
 router.get("/private",function(req,res){
     res.sendFile("src/private/private.html",option)
 })
+router.get("/private_vue",function(req,res){
+    res.sendFile("src/private_vue/private_vue.html",option)
+})
+
 
 router.get("/private/:itemName",function(req,res){
     res.sendFile("src/private/private_all.html",option)
