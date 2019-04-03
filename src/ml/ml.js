@@ -21,7 +21,12 @@ document.getElementById('button').onclick = (e)=>{
         })
         fileReader.readAsDataURL(blob)
         let ajax = new XMLHttpRequest
-        ajax.open('post', './test')
-        ajax.send(blob)
+        ajax.open('post', 'https://api-cn.faceplusplus.com/facepp/v3/detect')
+        let formData = new FormData
+        formData.append('api_key', '6DFr5_bY1JT6-oXoImJHxUSN_dqb85Wn')
+        formData.append('api_secret', 'CEwmBPfSBG-ZOsFhHLfFsErZ0MENaRhm')
+        formData.append('image_file', blob)
+        formData.append('return_attributes', 'gender,age')
+        ajax.send(formData)
     })
 }
