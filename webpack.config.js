@@ -2,10 +2,10 @@
 const path = require('path');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const webpack = require("webpack")
+const VueLoaerPLugin = require('vue-loader/lib/plugin')
 
 module.exports = {
 	entry:{
-		
 		//以下入口已废弃
 		//note_detail : './src/note_detail/note_detail.js',
 		//manage : './src/manage/manage.js',
@@ -19,22 +19,23 @@ module.exports = {
 		//private_vue: './src/private_vue/private_vue.js'
 		//test:"./src/test/test.js"
 		index: './src/index/index.js',
-
+    ml: ["@babel/polyfill",'./src/ml/ml_vue.js']
 
 	},
-	/*devServer:{
-		contentBase: './build',
-		port:9000,
-		hot:true
-	},*/
-	/*plugins:[
-		new HtmlWebpackPlugin({
-			title:"Outpur Management",
-			filename: 'test.html'
-		}),
-		new webpack.NamedModulesPlugin(),
-		new webpack.HotModuleReplacementPlugin()
-	],*/
+	// devServer:{
+	// 	contentBase: './build',
+	// 	port:9000,
+	// 	hot:true
+	// },
+	plugins:[
+		// new HtmlWebpackPlugin({
+		// 	title:"Outpur Management",
+		// 	filename: 'test.html'
+		// }),
+		// new webpack.NamedModulesPlugin(),
+    // new webpack.HotModuleReplacementPlugin()
+    new VueLoaerPLugin()
+	],
 	/*resolve: {
 		alias: {
 		  'vue$': 'vue/dist/vue.esm.js' // 用 webpack 1 时需用 'vue/dist/vue.common.js'
@@ -43,7 +44,8 @@ module.exports = {
 	devtool: 'inline-source-map',  //仅开发用，sourcemao启用
 	output:{
 		filename:'[name].js',
-		path:path.resolve(__dirname,'build')
+    path:path.resolve(__dirname,'build'),
+    publicPath: '/'
 	},
 
 //对js后缀文件要求使用babel-loader插件标准进行打包（babel实质是一个单独的转译器插件）
@@ -67,11 +69,17 @@ module.exports = {
 				test:/\.js$/,
 				use:{
 					loader:'babel-loader',
-					options:{
-						presets:['es2015','react'],
-					}
+					// options:{
+					// 	presets:['@babel/preset-env','@babel/preset-react'],
+					// }
 				}
-			},
+      },
+      {
+        test:/\.vue$/,
+        use:{
+          loader:'vue-loader'
+        }
+      },
 			{
 				test:/private\.css/,
 				loader:"style-loader!css-loader?modules"
@@ -124,7 +132,12 @@ module.exports = {
                         loader: "html-loader",
                     },
                 ],
-			}
+      },
+      {
+        test: /\.woff(2)?|ttf|eot|svg/,
+        use: ['file-loader']
+      }
 		]
-	},
+  },
+  mode: 'development'
 };

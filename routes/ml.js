@@ -11,4 +11,8 @@ router.get("/ml",function(req,res,next){
 	//res.sendFile("build/note1-1.md",options)
 });
 
+router.post('/ml/img_upload', (req, res, next)=>{
+ res.send('20')
+})
+
 module.exports = router;

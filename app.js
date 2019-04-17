@@ -19,12 +19,22 @@ var path = require("path")
 
 var cookieParser = require("cookie-parser");
 
+// 启用webpack devmiddleware
+var webpackDevMiddleware = require('webpack-dev-middleware')
+var expressWebSocket = require("express-ws")(app)
+const webpackConfig = require('./webpack.config')
+const webpack = require('webpack')
+const complier = webpack(webpackConfig)
+app.use(webpackDevMiddleware(complier, {
+  publicPath: '/'
+}))
+
 app.use(compression())
 var fileStream = fs.createWriteStream(path.join(__dirname,'access_log'),{flag:'a'})
 app.use(morgan('combined',{stream:fileStream}))
 
 app.use(express.static("build"));
-app.use(express.static("src/ml"))
+// app.use(express.static("src/ml"))
 app.use(cookieParser());
 
 app.use(index);
