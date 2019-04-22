@@ -1,12 +1,13 @@
 import Vue from 'Vue'
 import iView from 'iview'
 import 'iview/dist/styles/iview.css'
-import ml from './ml.vue'
+import './ml.css'
+import app from './app.vue'
 
 Vue.use(iView)
 let App = new Vue({
   render(createElement){
-    return createElement(ml)
+    return createElement(app)
   }
 }) 
 App.$mount('#app')

@@ -2,10 +2,12 @@ var express = require("express");
 var router = express.Router();
 var path = require("path");
 var axios = require('axios')
-var bodyParse = require("body-parser");
+var bodyParser = require("body-parser");
 
-axios.defaults.proxy = { host: "127.0.0.1", port: 8888}
-router.use(bodyParse.json());
+// axios.defaults.proxy = { host: "127.0.0.1", port: 8888}
+// router.use(bodyParser.json());
+router.use(bodyParser.json({limit: '50mb'}));
+router.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 
 
 router.get("/ml",function(req,res,next){
