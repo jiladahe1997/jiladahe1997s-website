@@ -1,6 +1,9 @@
 import "./resume.css"
 import "./resume.html"
 import "./bg.png"
+import "./contact_mail(lazy-load).png"
+import "./contact_phone(lazy-load).png"
+import "./contact_qq(lazy-load).png"
 var bounce = require("./bounce.js");
 function no_wheel(e){
     e.preventDefault()

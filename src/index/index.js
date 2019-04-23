@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDom from 'react-dom';
 import './avatarbackground.jpg';
 import './indexCustom.css';
+import '../public/button.css'
 
 //第一部分组件
 function Avatar(props){
@@ -129,7 +130,7 @@ class ServerState extends React.Component{
 	}*/
 
 	establishWebSocket(){
-		this.wb = new WebSocket("ws://120.78.151.148:3000/websocket/server_time");       //注意 wb 这个变量声明在 react组件 内部，而不是声明在状态中，这在react中是允许的
+		this.wb = new WebSocket(`ws://${window.location.hostname}/websocket/server_time`);       //注意 wb 这个变量声明在 react组件 内部，而不是声明在状态中，这在react中是允许的
 		this.wb.addEventListener("open",function(){				  					// 这样做的目的是为了其他函数能够访问一个函数内部的变量
 			console.log("websocket connect established!");
 		})

@@ -2,6 +2,7 @@ import "./note.css";
 import "./note-background.jpg"
 import "./title.jpg"
 import "./note_bg.jpg"
+import "../public/button.css"
 require ("./note.html");
 require ("expose-loader?$!./jquery-3.2.1.min");
 var showdown = require("./showdown.js");

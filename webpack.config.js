@@ -11,11 +11,11 @@ module.exports = {
 		//manage : './src/manage/manage.js',
 
 		//以下入口为了测试速度更快，暂时屏蔽
-		//resume : './src/resume/resume.js',
-		//index_vue :"./src/index_vue/index_vue.js",
-		//login : './src/login/custom-js.js',
-		//note : './src/note/note.js',
-		//private : './src/private/private.js',
+		resume : './src/resume/resume.js',
+	//	index_vue :"./src/index_vue/index_vue.js",
+		login : './src/login/custom-js.js',
+		note : './src/note/note.js',
+		private : './src/private/private.js',
 		//private_vue: './src/private_vue/private_vue.js'
 		//test:"./src/test/test.js"
 		index: './src/index/index.js',
