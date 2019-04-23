@@ -41,7 +41,7 @@ export default {
 
         this.my_predict_age = parseInt(age)
         this.facePlus_predic_age = attributes.age.value
-        this.$emit('img-predicted', resizedImg, new Date, this.my_predict_age, this.facePlus_predic_age)
+        this.$emit('img-predicted', resizedImg, new Date, this.facePlus_predic_age, this.my_predict_age)
         setTimeout(pooling_fetch.bind(this),2000)
       }  
     })
@@ -64,6 +64,8 @@ export default {
         img.onload = async () => {
           // this.$refs.test.append(img)
           let canvas = document.createElement('canvas')
+          img.width=640
+          img.height=480
           // this.$refs.test.append(canvas)
           canvas.width=640
           canvas.height=480

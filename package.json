@@ -8,7 +8,7 @@
     "build-dev": "webpack --config webpack.config.js",
     "watch": "webpack --watch",
     "webpackDev-start": "webpack-dev-server --open",
-    "start-prod": "cross-c NODE_ENV=production node app.js ",
+    "start-prod": "cross-env NODE_ENV=production node app.js ",
     "start-local": "node app.js NODE_ENV=local"
   },
   "dependencies": {
