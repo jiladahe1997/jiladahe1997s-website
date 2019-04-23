@@ -1,3 +1,6 @@
+[![LICENSE](https://img.shields.io/badge/license-Anti%20996-blue.svg)](https://github.com/996icu/996.ICU/blob/master/LICENSE)
+<a href="https://996.icu"><img src="https://img.shields.io/badge/link-996.icu-red.svg" alt="996.icu" /></a>
+
 # jiladahe1997s website
 
 这是我的个人网站，目前部署到阿里云服务器上，服务器地址：[jiladahe1997.top(国外)](http://jiladahe1997.top)&nbsp;&nbsp; [120.78.151.148(国内)](http://120.78.151.148)。 
