@@ -7,7 +7,7 @@
 <script>
 import Table from 'iview/src/components/table'
 import Tooltip from 'iview/src/components/tooltip'
-import Vue from 'Vue'
+import Vue from 'vue'
 Vue.component('Table-img', {
   props: ['imgBase64'],
   render() {
