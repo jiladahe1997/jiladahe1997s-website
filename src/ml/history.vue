@@ -42,12 +42,12 @@ export default {
           key: 'time'
         },
         {
-          title: 'face++结果',
-          key: 'face'
-        },
-        {
           title: '论文结果',
           key: 'thesis'
+        },
+        {
+          title: 'face++结果',
+          key: 'face'
         }
       ],
     }

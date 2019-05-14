@@ -4,29 +4,19 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const webpack = require("webpack")
 const VueLoaerPLugin = require('vue-loader/lib/plugin')
 
+
 module.exports = {
-	entry:{
-		//以下入口已废弃
-		//note_detail : './src/note_detail/note_detail.js',
-		//manage : './src/manage/manage.js',
-
-		//以下入口为了测试速度更快，暂时屏蔽
-		resume : './src/resume/resume.js',
-	//	index_vue :"./src/index_vue/index_vue.js",
-		login : './src/login/custom-js.js',
-		note : './src/note/note.js',
-		private : './src/private/private.js',
-		//private_vue: './src/private_vue/private_vue.js'
-		//test:"./src/test/test.js"
-		index: './src/index/index.js',
-    ml: ["@babel/polyfill",'./src/ml/ml_vue.js']
-
-	},
-	// devServer:{
-	// 	contentBase: './build',
-	// 	port:9000,
-	// 	hot:true
-	// },
+  entry: {
+    resume : './src/resume/resume.js',
+    //	index_vue :"./src/index_vue/index_vue.js",
+      login : './src/login/custom-js.js',
+      note : './src/note/note.js',
+      private : './src/private/private.js',
+      //private_vue: './src/private_vue/private_vue.js'
+      //test:"./src/test/test.js"
+      index: './src/index/index.js',
+      ml: ["@babel/polyfill",'./src/ml/ml_vue.js']
+  },
 	plugins:[
 		// new HtmlWebpackPlugin({
 		// 	title:"Outpur Management",
@@ -35,13 +25,8 @@ module.exports = {
 		// new webpack.NamedModulesPlugin(),
     // new webpack.HotModuleReplacementPlugin()
     new VueLoaerPLugin()
-	],
-	/*resolve: {
-		alias: {
-		  'vue$': 'vue/dist/vue.esm.js' // 用 webpack 1 时需用 'vue/dist/vue.common.js'
-		}
-	},*/
-	devtool: 'inline-source-map',  //仅开发用，sourcemao启用
+  ],
+  devtool: 'inline-source-map',  //仅开发用，sourcemao启用
 	output:{
 		filename:'[name].js',
     path:path.resolve(__dirname,'build'),
@@ -138,6 +123,5 @@ module.exports = {
         use: ['file-loader']
       }
 		]
-  },
-  mode: 'development'
-};
+  }
+}

@@ -21,11 +21,11 @@ var cookieParser = require("cookie-parser");
 
 // 启用webpack devmiddleware
 var webpackDevMiddleware = require('webpack-dev-middleware')
-const webpackConfig = require('./webpack.config')
-const webpack = require('webpack')
-const complier = webpack(webpackConfig)
 
 if (process.env.NODE_ENV === 'production') {
+  const webpackConfig = require('./webpack.prod.js')
+  const webpack = require('webpack')
+  const complier = webpack(webpackConfig)
   complier.run((err, stats) => {
     if (err) {
       console.error(err.stack || err);
@@ -46,6 +46,9 @@ if (process.env.NODE_ENV === 'production') {
     }
   })
 } else{
+  const webpackConfig = require('./webpack.dev.js')
+  const webpack = require('webpack')
+  const complier = webpack(webpackConfig)
   app.use(webpackDevMiddleware(complier, {
     publicPath: '/'
   }))
@@ -73,7 +76,7 @@ app.use(ml);
 app.get('/',function(req,res){
 	res.redirect("/index");
 })
-let port = process.env.NODE_ENV === 'production' ? 80 : 3000
+let port = process.env.NODE_ENV === 'production' ? 3000 : 3000
 var server = app.listen(port,function(){
 	var host = server.address().address;
 	var port = server.address().port;
