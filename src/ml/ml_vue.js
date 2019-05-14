@@ -1,4 +1,4 @@
-import Vue from 'Vue'
+import Vue from 'vue'
 import iView from 'iview'
 import 'iview/dist/styles/iview.css'
 import './ml.css'
